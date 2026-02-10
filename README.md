@@ -1,5 +1,7 @@
 # Demo Shop App
 
+![Flutter CI/CD](https://github.com/DINESH-JUMANI/Demo_Shop_App/workflows/Flutter%20CI/CD/badge.svg)
+
 A modern Flutter application showcasing product browsing with clean architecture, state management, and comprehensive testing.
 
 ## About
@@ -15,6 +17,10 @@ Demo Shop App is a full-featured Flutter e-commerce application that demonstrate
 - **State Management**: Riverpod for efficient and scalable state management
 - **Error Handling**: Comprehensive error handling with user-friendly messages
 - **Loading States**: Skeleton screens for better UX during data loading
+
+## Demo
+
+Watch the app in action! [**Click here to view the demo video**](https://drive.google.com/file/d/1PIVD6_LQs_K8Wr0b1ssR-id3rcH-d5wA/view?usp=drivesdk) showcasing all features and functionality.
 
 ## API
 
@@ -123,6 +129,52 @@ flutter build ios --release
 ```bash
 flutter build web --release
 ```
+
+## CI/CD & Artifacts
+
+This project uses **GitHub Actions** for automated CI/CD pipeline that builds and deploys the app on every push.
+
+### Automated Builds
+
+The workflow automatically:
+- Runs code formatting and analysis
+- Executes all unit tests with coverage reports
+- Builds **Android APK** and **AAB** (App Bundle)
+- Builds **iOS** application (unsigned)
+- Creates downloadable artifacts for each platform
+- Generates GitHub Releases when version tags are pushed
+
+### Download Build Artifacts
+
+#### From Workflow Runs:
+1. Go to [**Actions**](../../actions) tab
+2. Click on the latest successful workflow run
+3. Scroll to **Artifacts** section
+4. Download:
+   - `android-apk-release` - Android APK file
+   - `android-aab-release` - Android App Bundle (for Play Store)
+   - `ios-release-unsigned` - iOS build
+
+#### From Releases:
+Visit the [**Releases**](../../releases) page to download the latest stable builds with all artifacts attached.
+
+### Workflow Configuration
+
+- **Flutter Version**: `3.38.9`
+- **Platforms**: Android & iOS
+- **Triggers**: Push to main/master/develop, Pull Requests, Version Tags
+- **Artifact Retention**: 30 days
+
+### Create a Release
+
+To trigger an automatic release with artifacts:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+This will create a GitHub Release with APK, AAB, and iOS builds attached.
 
 ## Testing
 
