@@ -1,46 +1,82 @@
+# =============================================================================
+# Demo Shop App - A Flutter E-Commerce Application
+# =============================================================================
+# App Information
 name: demo_shop_app
-description: "A new Flutter project."
+description: "A modern Flutter e-commerce application with product browsing, search, and theme support."
 version: 1.0.0+1
 
+# =============================================================================
+# Environment Configuration
+# =============================================================================
 environment:
   sdk: ^3.10.8
 
+# =============================================================================
+# Production Dependencies
+# =============================================================================
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.8
-  dio: ^5.9.1
-  pretty_dio_logger: ^1.4.0
-  flutter_riverpod: ^3.2.1
-  shared_preferences: ^2.5.4
-  persistent_bottom_nav_bar_v2: ^6.2.0
-  cached_network_image: ^3.4.1
-  skeletonizer: ^2.1.2
-  carousel_slider: ^5.1.2
+  # UI Components
+  cupertino_icons: ^1.0.8                      # iOS style icons
+  
+  # Networking
+  dio: ^5.9.1                                  # HTTP client for REST API calls
+  pretty_dio_logger: ^1.4.0                    # Beautiful HTTP request/response logging
+  
+  # State Management
+  flutter_riverpod: ^3.2.1                     # Modern state management solution
+  
+  # Local Storage
+  shared_preferences: ^2.5.4                   # Persistent key-value storage
+  
+  # Navigation
+  persistent_bottom_nav_bar_v2: ^6.2.0         # Persistent bottom navigation bar
+  
+  # Image Handling
+  cached_network_image: ^3.4.1                 # Network image caching
+  
+  # UI Enhancements
+  skeletonizer: ^2.1.2                         # Skeleton loading screens
+  carousel_slider: ^5.1.2                      # Image carousel widget
 
+# =============================================================================
+# Development Dependencies
+# =============================================================================
 dev_dependencies:
+  # Testing
   flutter_test:
     sdk: flutter
   
   integration_test:
     sdk: flutter
 
-  flutter_lints: ^6.0.0
-  flutter_launcher_icons: ^0.14.4
+  # Code Quality
+  flutter_lints: ^6.0.0                        # Official Flutter linting rules
+  
+  # Asset Generation
+  flutter_launcher_icons: ^0.14.4              # Generate app icons for iOS and Android
 
 
+# =============================================================================
+# Flutter Configuration
+# =============================================================================
 flutter:
-
   uses-material-design: true
 
+  # Asset Configuration
   assets:
-    - assets/images/
-    - assets/icons/
+    - assets/images/                           # Product images and screenshots
+    - assets/icons/                            # App icons and UI icons
 
+# =============================================================================
+# App Icon Configuration
+# =============================================================================
 flutter_launcher_icons:
-  android: true
-  ios: true
-  image_path: "assets/icons/app_icon.png"
-  remove_alpha_ios: true
+  android: true                                # Generate Android launcher icons
+  ios: true                                    # Generate iOS launcher icons
+  image_path: "assets/icons/app_icon.png"      # Source icon image (1024x1024 recommended)
+  remove_alpha_ios: true                       # Remove alpha channel for iOS compatibility
 
