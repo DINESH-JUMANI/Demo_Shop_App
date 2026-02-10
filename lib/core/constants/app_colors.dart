@@ -25,13 +25,6 @@ class AppColors {
   static const Color textSecondaryLight = Color(0xFF6B7280);
   static const Color textSecondaryDark = Color(0xFF9CA3AF);
 
-  // Gradient Colors
-  static const List<Color> splashGradient = [
-    Color(0xFF6366F1),
-    Color(0xFF8B5CF6),
-    Color(0xFFEC4899),
-  ];
-
   // Status Colors
   static const Color success = Color(0xFF10B981);
   static const Color error = Color(0xFFEF4444);
