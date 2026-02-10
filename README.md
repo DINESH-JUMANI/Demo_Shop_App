@@ -70,8 +70,6 @@ lib/
 │   │   └── widgets/
 │   └── splash/                       # Splash screen
 │       └── screen/
-└── utils/                            # App utilities
-    └── custom_widgets/               # Custom widgets
 ```
 
 ## Getting Started
