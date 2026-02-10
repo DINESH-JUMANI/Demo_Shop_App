@@ -26,7 +26,7 @@ class Product {
           (json['discountPercentage'] as num?)?.toDouble() ?? 0.0,
       rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
       stock: json['stock'] as int? ?? 0,
-      brand: json['brand'] as String? ?? '',
+      brand: json['brand'] as String?,
       category: json['category'] as String? ?? '',
       thumbnail: json['thumbnail'] as String? ?? '',
       images:
@@ -43,7 +43,7 @@ class Product {
   final double discountPercentage;
   final double rating;
   final int stock;
-  final String brand;
+  final String? brand;
   final String category;
   final String thumbnail;
   final List<String> images;

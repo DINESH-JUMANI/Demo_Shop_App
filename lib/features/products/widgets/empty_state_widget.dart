@@ -49,7 +49,7 @@ class EmptyStateWidget extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: onRetry,
                   icon: const Icon(Icons.refresh),
-                  label: const Text(AppStrings.retry),
+                  label: const Text(AppStrings.tryAgain),
                 ),
               ],
             ],

@@ -16,15 +16,16 @@ class ProductInfoSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Brand
-        Text(
-          product.brand.toUpperCase(),
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: AppColors.primaryLight,
-            fontWeight: FontWeight.w600,
-            letterSpacing: 1.2,
-            fontSize: 11,
+        if (product.brand != null && product.brand!.isNotEmpty)
+          Text(
+            product.brand!.toUpperCase(),
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: AppColors.primaryLight,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.2,
+              fontSize: 11,
+            ),
           ),
-        ),
         const SizedBox(height: AppSizes.spaceMd),
 
         // Title

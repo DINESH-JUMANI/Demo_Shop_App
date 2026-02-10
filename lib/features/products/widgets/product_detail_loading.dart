@@ -45,13 +45,17 @@ class ProductDetailLoading extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      mockProduct.brand.toUpperCase(),
-                      style: Theme.of(
-                        context,
-                      ).textTheme.bodySmall?.copyWith(fontSize: 11),
-                    ),
-                    const SizedBox(height: AppSizes.spaceMd),
+                    if (mockProduct.brand != null &&
+                        mockProduct.brand!.isNotEmpty)
+                      Text(
+                        mockProduct.brand!.toUpperCase(),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodySmall?.copyWith(fontSize: 11),
+                      ),
+                    if (mockProduct.brand != null &&
+                        mockProduct.brand!.isNotEmpty)
+                      const SizedBox(height: AppSizes.spaceMd),
                     Text(
                       mockProduct.title,
                       style: Theme.of(context).textTheme.headlineSmall,

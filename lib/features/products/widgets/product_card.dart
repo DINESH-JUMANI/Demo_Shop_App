@@ -67,15 +67,17 @@ class ProductCard extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceXs),
 
                   // Brand
-                  Text(
-                    product.brand,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodySmall?.copyWith(fontSize: 11),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const SizedBox(height: AppSizes.spaceSm),
+                  if (product.brand != null && product.brand!.isNotEmpty)
+                    Text(
+                      product.brand!,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.bodySmall?.copyWith(fontSize: 11),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  if (product.brand != null && product.brand!.isNotEmpty)
+                    const SizedBox(height: AppSizes.spaceSm),
 
                   // Rating
                   Row(

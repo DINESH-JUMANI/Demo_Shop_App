@@ -17,15 +17,15 @@ class ErrorHandler {
 
       // Handle specific status codes
       if (statusCode == ApiConstants.statusBadRequest) {
-        return 'Invalid request. Please check your input.';
+        return 'Bad request. Please check your input.';
       } else if (statusCode == ApiConstants.statusUnauthorized) {
-        return 'Unauthorized access. Please login again.';
+        return 'Unauthorized. Please login again.';
       } else if (statusCode == ApiConstants.statusForbidden) {
-        return 'Access forbidden.';
+        return 'You don\'t have permission to access this resource.';
       } else if (statusCode == ApiConstants.statusNotFound) {
         return 'Resource not found.';
       } else if (statusCode == ApiConstants.statusInternalServerError) {
-        return 'Server error. Please try again later.';
+        return 'Internal server error. Please try again later.';
       } else if (statusCode != null && statusCode >= 500) {
         return 'Server error. Please try again later.';
       }
@@ -36,19 +36,22 @@ class ErrorHandler {
     // Handle different DioException types
     switch (error.type) {
       case DioExceptionType.connectionTimeout:
+        return 'Connection timeout. Please try again.';
       case DioExceptionType.sendTimeout:
+        return 'Request timeout. Please try again.';
       case DioExceptionType.receiveTimeout:
-        return 'Connection timeout. Please check your internet connection.';
+        return 'Server is taking too long to respond. Please try again.';
       case DioExceptionType.badResponse:
         return 'Server error. Please try again later.';
       case DioExceptionType.cancel:
-        return 'Request cancelled.';
+        return 'Request was cancelled.';
       case DioExceptionType.connectionError:
         return 'No internet connection. Please check your network settings.';
       case DioExceptionType.badCertificate:
         return 'Security certificate error.';
       case DioExceptionType.unknown:
-        return error.message ?? 'An unexpected error occurred.';
+        return error.message ??
+            'An unexpected error occurred. Please try again.';
     }
   }
 }
